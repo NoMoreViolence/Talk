@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 module.exports = () => {
     function connect() {
-        mongoose.connect('127.0.0.1:27017/', function(err) {
+        mongoose.connect('127.0.0.1:27017/Talk', function(err) {
             if (err) {
                 console.error('mongodb connection error', err);
             }
@@ -15,5 +15,5 @@ module.exports = () => {
     mongoose.connection.on('error', function() {
         console.log('Connection Failed!');
     });
-    require(__dirname + '/information.js'); // 스키마들
+    require(__dirname + '/User.js'); // 유저 정보 스키마
 };
