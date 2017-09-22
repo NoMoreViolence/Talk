@@ -16,4 +16,5 @@ module.exports = () => {
         console.log('Connection Failed!');
     });
     require(__dirname + '/User.js'); // 유저 정보 스키마
+    require(__dirname + '/ChatData.js');
 };
