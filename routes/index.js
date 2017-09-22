@@ -5,9 +5,10 @@ const router = express.Router();
 const Client = require('mongodb').MongoClient;
 
 // 유저 정보 디비, 블로그 포스트 디비
-const User = require(__dirname + '/User.js');
-const ChatData = require(__dirname + '/ChatData.js');
-/* GET home page. */
+const User = require(__dirname + '/../DB/User.js');
+const ChatData = require(__dirname + '/../DB/ChatData.js');
+
+/* 홈페이지 */
 router.get('/', function(req, res, next) {
     res.render('index', { title: 'Express' });
 });
