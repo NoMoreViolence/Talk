@@ -2,16 +2,16 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 module.exports = () => {
-    function connect() {
-        mongoose.connect('127.0.0.1:27017/Talk', function(err) {
+    function createConnection() {
+        mongoose.createConnection('127.0.0.1:27017/Talk', function(err) {
             if (err) {
                 console.error('mongodb connection error', err);
             }
             console.log('mongodb connected');
         });
     }
-    connect();
-    mongoose.connection.on('disconnected', connect);
+    createConnection();
+    mongoose.connection.on('disconnected', createConnection);
     mongoose.connection.on('error', function() {
         console.log('Connection Failed!');
     });
